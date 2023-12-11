@@ -1,0 +1,15 @@
+# render.yaml
+
+services:
+  - type: web
+    name: your-react-app
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    env:
+      - key: NODE_ENV
+        value: production
+    staticPublishPath: build
+
+routes:
+  - path: /*
+    service: your-react-app
